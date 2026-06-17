@@ -1,0 +1,126 @@
+.main-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 600px;
+}
+
+/* Три колонки: текст | дата | кнопка */
+.top-container {
+    display: grid;
+    grid-template-columns: 1fr 150px 80px;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+input,
+button {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.add-task-btn {
+    background-color: rgb(22, 104, 22);
+}
+
+.tasks_container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;        /* вместо margin-top на .task + .task */
+    margin-top: 18px;
+    width: 100%;
+}
+
+/* Четыре колонки: чекбокс | текст (растягивается) | дата (фиксированная) | кнопка */
+.task {
+    display: grid;
+    grid-template-columns: 20px 1fr 110px 80px;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+    padding: 10px 4px;
+    border-bottom: 1px solid #eee;
+}
+
+.task-checkbox {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
+    accent-color: rgb(22, 104, 22);
+}
+
+.task p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+/* Текст не переносится, обрезается с ... */
+.task-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Дата выравнивается вправо и не переносится */
+.task-deadline {
+    text-align: right;
+    white-space: nowrap;
+    font-size: 13px;
+    color: #888;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.delete-btn {
+    background-color: rgb(171, 15, 15);
+}
+
+.sort-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.sort-btn {
+    width: auto;
+    height: 34px;
+    padding: 0 14px;
+    font-size: 13px;
+    background: transparent;
+    color: #555;
+    border: 1px solid #ccc !important;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.sort-btn.active {
+    background-color: rgb(22, 104, 22);
+    color: #fff;
+    border-color: rgb(22, 104, 22) !important;
+}
