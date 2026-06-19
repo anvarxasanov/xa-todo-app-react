@@ -35,30 +35,33 @@ export function HomePage() {
     }, [tasks]);
     
     return (
-        <div className="main-content">
-            <h3>ToDo App React</h3>
+        <>
+            <title>Todo App React</title>
+            <div className="main-content">
+                <h3>ToDo App React</h3>
 
-            <AddTask
-                inputValue={inputValue}
-                setInputValue={setInputValue}
-                setTasks={setTasks}
-                tasks={tasks}
-                deadline={deadline}
-                setDeadline={setDeadline}
-            />
+                <AddTask
+                    inputValue={inputValue}
+                    setInputValue={setInputValue}
+                    setTasks={setTasks}
+                    tasks={tasks}
+                    deadline={deadline}
+                    setDeadline={setDeadline}
+                />
 
-            <div className="sort-container">
-                <button
-                    className={`sort-btn ${sortBy === "date" ? "active" : ""}`}
-                     onClick={() => setSortBy(sortBy === "date" ? "default" : "date")}
-                >By date</button>
-                <button
-                    className={`sort-btn ${sortBy === "completed" ? "active" : ""}`}
-                     onClick={() => setSortBy(sortBy === "completed" ? "default" : "completed")}
-                > Completed last</button>
+                <div className="sort-container">
+                    <button
+                        className={`sort-btn ${sortBy === "date" ? "active" : ""}`}
+                        onClick={() => setSortBy(sortBy === "date" ? "default" : "date")}
+                    >By date</button>
+                    <button
+                        className={`sort-btn ${sortBy === "completed" ? "active" : ""}`}
+                        onClick={() => setSortBy(sortBy === "completed" ? "default" : "completed")}
+                    > Completed last</button>
+                </div>
+
+                <Tasks tasks={sortedTasks} setTasks={setTasks} />
             </div>
-
-            <Tasks tasks={sortedTasks} setTasks={setTasks} />
-        </div>
+        </>
     );
 }
